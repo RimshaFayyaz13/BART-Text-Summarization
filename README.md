@@ -1,150 +1,137 @@
-BART-Based Abstractive Text Summarization for News Articles
-Business Objective
-Text summarization is a critical aspect of data science and natural language processing, enabling the condensation of document size while retaining its meaning. This project focuses on abstractive summarization, leveraging the BART model to generate concise summaries that may introduce new phrases not present in the original text. The applications of this technology span diverse domains, including:
+📰 BART-Based Abstractive Text Summarization for News Articles
+🚀 Business Objective
+Text summarization condenses long content while retaining its core meaning—critical in NLP and data science. This project uses the BART model for abstractive summarization, generating high-quality summaries that may include rephrased or newly constructed sentences.
 
-Scientific research
+💡 Applications across industries:
+
+Scientific Research
+
+Financial Reports
+
+Legal Analysis
+
 Literature
-Financial reporting
-Legal analysis
-Meeting and video conferencing summaries
-Programming documentation
-Data Description
-The dataset comprises 40,000 professionally crafted summaries of news articles, accompanied by links to the original articles. Sourced data is in CSV format and includes the following features:
 
-Article Titles: Headline of the news article.
-Summaries: Professionally written summaries.
-URLs: Links to the original articles.
-Dates: Publication dates of the articles.
-Article Content: Full content of the articles.
-Aim
-To perform abstractive text summarization on the given dataset using the BART (Bidirectional and Auto-Regressive Transformer) model.
+Meeting Summaries
 
-Tech Stack
-Programming Language: Python
+Programming Docs
+
+📊 Dataset Overview
+The dataset contains 40,000 professionally written summaries of news articles.
+
+Feature	Description
+Title	Headline of the article
+Summary	Human-written summary
+URL	Link to the original article
+Date	Publication date
+Content	Full article text
+
+🎯 Project Goal
+To implement and fine-tune the BART (Bidirectional and Auto-Regressive Transformer) model for abstractive summarization.
+
+🛠 Tech Stack
+Language: Python
+
 Libraries:
-pandas for data manipulation.
-scikit-learn for data preprocessing.
-PyTorch for deep learning model implementation.
-Transformers by Hugging Face for NLP models and tokenizers.
-Environment: Google Colab for GPU-enabled training.
-Approach
-1. Data Exploration and Preparation
-Import the dataset using the dataset library and load a subset for initial exploration.
-Clone the repository housing the data and download article details (titles, summaries, URLs, and dates) into a CSV file.
-Scrape and preprocess the data as needed for model training.
+
+pandas, scikit-learn, PyTorch, transformers
+
+Environment: Google Colab (for GPU support)
+
+🔍 Methodology
+1. Data Preparation
+Load and explore dataset
+
+Scrape content and preprocess data
+
 2. Environment Setup
-Set up a new environment and install required dependencies from requirements.txt.
-Configure the runtime to utilize GPU for faster processing.
-3. BART Model Development
-Import necessary packages and libraries.
-Develop the following class functions:
-Dataset Class: Handles loading and preprocessing of the dataset.
-Data Loader Class: Prepares data for BART model input.
-BART Summarization Model: Implements BARTForConditionalGeneration for abstractive summarization.
-Define the tokenizer and data loader for BART.
+Install dependencies via requirements.txt
+
+Enable GPU runtime in Colab
+
+3. Model Development
+Define custom Dataset and DataLoader classes
+
+Use BARTForConditionalGeneration from Hugging Face
+
 4. Model Training
-Preprocess the data and split it into training and testing sets.
-Construct a main class for executing the BARTForConditionalGeneration model and tokenizer.
-Define a trainer class to fine-tune the model on the dataset.
-5. Summarization and Evaluation
-Generate summaries using the pre-trained and fine-tuned BART model.
-Evaluate the performance of the model using Rouge scores:
-Rouge-1: Unigram overlap.
-Rouge-2: Bigram overlap.
-Rouge-L: Longest common subsequence.
-6. Web Application Deployment
-Set up a web interface for users to input news articles and obtain summaries.
-Install necessary packages from requirements.txt.
-Navigate to the output folder and run app.py.
-Access the web application locally on port 5000.
-Input a news article link and display the generated summary.
-Project Structure
+Split data into train/test sets
+
+Train using a custom trainer class
+
+5. Summarization & Evaluation
+Generate summaries
+
+Evaluate using ROUGE metrics (ROUGE-1, ROUGE-2, ROUGE-L)
+
+6. Web App Deployment
+Built with Flask
+
+Summarize articles via a simple web UI
+
+📁 Project Structure
+bash
+Copy
+Edit
 .
-├── data/                                  # Contains raw and processed data.
-│   ├── news_articles.csv                  # Dataset with article titles, summaries, and content.
-├── src/                                   # Source code folder.
-│   ├── bart_summarization.py              # Main script for model implementation.
-│   ├── dataset_loader.py                  # Data preprocessing and loading utilities.
-│   ├── trainer.py                         # Model training script.
-├── app/                                   # Web application files.
-│   ├── app.py                             # Flask app for deployment.
-├── output/                                # Stores generated summaries and evaluation metrics.
-├── requirements.txt                       # Dependency file for the project.
-└── README.md                              # Project documentation.
-Getting Started
-1. Clone the Repository
+├── data/                # Raw and preprocessed datasets
+├── src/                 # Core implementation files
+├── app/                 # Flask-based web application
+├── output/              # Results and metrics
+├── requirements.txt     # Python dependencies
+└── README.md            # Project overview
+▶️ Getting Started
+bash
+Copy
+Edit
+# Clone the repository
 git clone <repository_url>
 cd <repository_folder>
-2. Install Dependencies
-Install the required libraries with:
 
+# Install dependencies
 pip install -r requirements.txt
-3. Run the Summarization Model
-Execute the BART summarization model:
 
+# Run the summarization model
 python src/bart_summarization.py
-4. Deploy the Web Application
-Navigate to the app folder and run the Flask application:
+
+# Launch the web application
+cd app/
 python app.py
-Access the application at http://127.0.0.1:5000.
-5. Evaluate the Results
-Check the output/ folder for Rouge evaluation scores and generated summaries.
-Results
-High-Quality Summaries:
-Generated abstractive summaries that capture the essence of news articles.
-Evaluation Metrics:
-Achieved competitive Rouge scores.
-Web Application:
-User-friendly interface for summarizing news articles on-demand.
-Contributing
-Contributions are welcome! To contribute:
+# Access at: http://127.0.0.1:5000
+📈 Results
+🔹 High-quality summaries with semantic accuracy
 
-Fork the repository.
-Create a feature branch:
-git checkout -b feature-name
-Commit your changes:
-git commit -m "Add feature"
-Push your branch:
-git push origin feature-name
-Open a pull request.
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+🔹 Achieved competitive ROUGE scores
 
-Contact
-For any questions or suggestions, please reach out to:
+🔹 User-friendly web app for real-time summarization
 
+🤝 Contributing
+Contributions are welcome!
+
+Fork this repo
+
+Create a new branch: git checkout -b feature-name
+
+Commit and push: git commit -m "Add feature"
+
+Open a pull request
+
+📄 License
+This project is under the MIT License. See the LICENSE file for more info.
+
+📬 Contact
 Name: Abhinav Navneet
 Email: mailme.AbhinavN@gmail.com
 GitHub: AjNavneet
-Acknowledgments
+
+🙏 Acknowledgments
 Special thanks to:
 
-Hugging Face for providing pre-trained models and tools.
-Google Colab for enabling GPU-based training.
-PyTorch for its deep learning framework.
-The Python open-source community for exceptional libraries and resources.
-About
-Abstractive text summarisation using BART model on articles data.
+🤗 Hugging Face
 
-Topics
-bart abstractive-text-summarization articles-summaries
-Resources
- Readme
-License
- MIT license
- Activity
-Stars
- 5 stars
-Watchers
- 1 watching
-Forks
- 0 forks
-Report repository
-Releases
-No releases published
-Packages
-No packages published
-Languages
-Jupyter Notebook
-99.4%
- 
+🧠 PyTorch
+
+☁️ Google Colab
+
+🐍 Python OSS community
+
