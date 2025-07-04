@@ -129,11 +129,6 @@ git push origin feature-name
 
 Licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
 
-## 📬 Contact
-
-**👤 Abhinav Navneet**  
-📧 mailme.AbhinavN@gmail.com  
-🐙 GitHub: [AjNavneet](https://github.com/AjNavneet)
 
 ## 🙌 Acknowledgments
 
